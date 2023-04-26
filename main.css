@@ -87,6 +87,7 @@ main {
   position: relative;
   height: 240px;
   margin-bottom: 5.625rem;
+  filter: drop-shadow(0px 39px 60px rgba(0, 0, 0, 0.142481));
 }
 
 .back-card,
@@ -345,7 +346,7 @@ input[type="number"] {
     place-content: center;
     gap: 2rem;
 
-    max-width: 1210px;
+    max-width: 1110px;
     padding-inline: 2.5rem;
   }
 
@@ -355,6 +356,7 @@ input[type="number"] {
 
     display: grid;
     gap: 2.25rem;
+    max-width: 541px;
   }
 
   .front-card,
@@ -423,9 +425,14 @@ input[type="number"] {
     padding: 0;
   }
 
+  .form-container {
+    padding-bottom: 0;
+  }
+
   .form-container form {
     row-gap: 1.625rem;
     column-gap: 1.25rem;
+    margin-inline: 0;
   }
 
   .btn {
@@ -435,7 +442,20 @@ input[type="number"] {
 
 @media (min-width: 1200px) {
   main {
-    gap: 7.875rem;
+    grid-template-columns: 48.74% auto;
+    gap: 7.9375rem;
     padding: 0;
   }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 }
