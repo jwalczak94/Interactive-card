@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap"
+      rel="stylesheet" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+    <link rel="stylesheet" href="main.css" />
+    <title>Frontend Mentor | Interactive card details form</title>
+  </head>
+  <body>
+    <main>
+      <div class="card-container">
+        <div class="front-card">
+          <img
+            src="./images/bg-card-front.png"
+            alt="Front side of the card"
+            class="front-card__bg" />
+          <img src="./images/card-logo.svg" alt="" aria-label="hidden" class="front-card__logo" />
+          <span class="front-card__number">0000 0000 0000 0000</span>
+          <span class="front-card__name">Jane Appleseed</span>
+          <span class="front-card__date-1">00</span>
+          <span class="front-card__spacer">/</span>
+          <span class="front-card__date-2">00</span>
+        </div>
+
+        <div class="back-card">
+          <img src="./images/bg-card-back.png" alt="Back side of the card" class="back-card__bg" />
+          <span class="back-card__cvc">000</span>
+        </div>
+      </div>
+
+      <div class="form-content">
+        <div class="form-container">
+          <form>
+            <div class="input-container" id="input-1">
+              <label for="name" class="input-label">Cardholder Name</label>
+              <input
+                type="text"
+                name="name"
+                id="name"
+                class="input-content"
+                maxlength="50"
+                required
+                placeholder="e.g. Jane Appleseed"
+                pattern="^[a-zA-Z_ ]+$" />
+              <span class="error-message hidden" id="message-1">Can't be blank</span>
+            </div>
+
+            <div class="input-container" id="input-2">
+              <label for="card-number" class="input-label">Card Number</label>
+              <input
+                type="number"
+                name="card-number"
+                id="card-number"
+                class="input-content"
+                required
+                max="9999999999999999"
+                placeholder="e.g. 1234 5678 9123 0000" />
+              <span class="error-message hidden" id="message-2">Can't be blank</span>
+            </div>
+
+            <div class="input-container" id="input-3">
+              <label for="month" class="input-label">Exp. Date (MM/YY)</label>
+              <div class="input-container-date">
+                <input
+                  type="number"
+                  name="month"
+                  id="month"
+                  class="input-content"
+                  required
+                  min="1"
+                  max="12"
+                  placeholder="mm" />
+                <input
+                  type="number"
+                  name="year"
+                  id="year"
+                  class="input-content"
+                  required
+                  max="99"
+                  placeholder="yy" />
+              </div>
+              <span class="error-message hidden" id="message-3">Can't be blank</span>
+            </div>
+
+            <div class="input-container" id="input-4">
+              <label for="cvc" class="input-label">CVC</label>
+              <input
+                type="number"
+                name="cvc"
+                id="cvc"
+                class="input-content border"
+                required
+                max="999"
+                placeholder="e.g. 123" />
+              <span class="error-message hidden" id="message-4">Can't be blank</span>
+            </div>
+
+            <button type="submit" class="btn" id="btn-confirm">Confirm</button>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <script src="index.js"></script>
+  </body>
+</html>
